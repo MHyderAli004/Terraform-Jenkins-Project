@@ -19,13 +19,13 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init -backend-config=backend.tf'
+                sh 'terraform init'
             }
         }
 
         stage('Format Check') {
             steps {
-                sh 'terraform fmt -check'
+                sh 'terraform fmt -backend-config=backend.tf -check'
             }
         }
 
