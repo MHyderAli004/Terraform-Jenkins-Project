@@ -25,7 +25,7 @@ pipeline {
 
         stage('Format Check') {
             steps {
-                sh 'terraform fmt -backend-config=backend.tf -check'
+                sh 'terraform fmt -check'
             }
         }
 
