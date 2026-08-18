@@ -1,0 +1,19 @@
+# Ignore local Terraform directories
+**/.terraform/*
+
+# Ignore Terraform state files (contain resource IDs and secrets)
+*.tfstate
+*.tfstate.*
+
+# Ignore crash logs
+crash.log
+
+# Ignore backup variable files
+*.tfvars.backup
+
+# Ignore sensitive variable files (store credentials or private values)
+*.tfvars
+*.tfvars.json
+
+# Ignore Terraform lock file (can be regenerated)
+.terraform.lock.hcl
