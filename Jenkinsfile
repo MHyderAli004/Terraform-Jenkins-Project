@@ -53,6 +53,22 @@ pipeline {
                 sh 'terraform apply tfplan'
             }
         }
+
+        stage('Manual Approval - Destroy') {
+            steps {
+                script {
+                    timeout(time: 10, unit: 'MINUTES') {
+                        input message: "Approve Terraform Destroy?"
+                    }
+                }
+            }
+        }
+
+        stage('Destroy') {
+            steps {
+                sh 'terraform destroy -auto-approve'
+            }
+        }
     }
 
     post {
